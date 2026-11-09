@@ -31,6 +31,8 @@ class Settings:
     sendgrid_api_key: str = field(default="", repr=False)
     sendgrid_from_email: str = ""
     sendgrid_from_name: str = "Oryven by Buno AI"
+    email_hook_url: str = ""
+    email_hook_secret: str = field(default="", repr=False)
     vision_provider: str = "structured"
     vision_ollama_url: str = "http://127.0.0.1:11434"
     vision_model: str = ""
@@ -66,6 +68,8 @@ class Settings:
             sendgrid_api_key=os.environ.get("SENDGRID_API_KEY", ""),
             sendgrid_from_email=os.environ.get("SENDGRID_FROM_EMAIL", ""),
             sendgrid_from_name=os.environ.get("SENDGRID_FROM_NAME", "Oryven by Buno AI"),
+            email_hook_url=os.environ.get("ORYVEN_EMAIL_HOOK_URL", "").strip(),
+            email_hook_secret=os.environ.get("ORYVEN_EMAIL_HOOK_SECRET", "").strip(),
             vision_provider=os.environ.get("ORYVEN_VISION_PROVIDER", "structured").strip().lower(),
             vision_ollama_url=os.environ.get("ORYVEN_VISION_OLLAMA_URL", "http://127.0.0.1:11434"),
             vision_model=os.environ.get("ORYVEN_VISION_MODEL", ""),
