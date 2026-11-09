@@ -151,19 +151,37 @@ export default function App() {
   useEffect(() => {
     let active = true;
     (async () => {
-      for (let attempt = 0; attempt < 24 && active; attempt++) {
+      // The packaged Python sidecar can take several seconds to cold-start on
+      // Windows. Keep retrying while this screen is mounted instead of giving
+      // up after a short fixed window and leaving authentication disabled.
+      while (active) {
         try {
-          const session = await fetch(`${API}/api/session`).then(r => { if (!r.ok) throw new Error('offline'); return r.json(); });
+          const session = await fetch(`${API}/api/session`).then(r => {
+            if (!r.ok) throw new Error('offline');
+            return r.json();
+          });
           if (!active) return;
           setToken(session.session_token);
-          const restored = await fetch(`${API}/api/auth/restore`, { method: 'POST', headers: { 'X-Oryven-Session': session.session_token } });
+          setConnected(true);
+
+          const restored = await fetch(`${API}/api/auth/restore`, {
+            method: 'POST',
+            headers: { 'X-Oryven-Session': session.session_token }
+          });
+
           if (restored.ok) {
             const auth: AuthResult = await restored.json();
-            accountAccessToken = auth.access_token; setAccount(auth.user);
-            await refresh(session.session_token); await discover(session.session_token);
-          } else { setConnected(true); }
+            accountAccessToken = auth.access_token;
+            setAccount(auth.user);
+            await refresh(session.session_token);
+            await discover(session.session_token);
+          }
           return;
-        } catch { setConnected(false); await new Promise(r => window.setTimeout(r, 250)); }
+        } catch {
+          if (!active) return;
+          setConnected(false);
+          await new Promise(r => window.setTimeout(r, 500));
+        }
       }
     })();
     return () => { active = false; };
@@ -328,8 +346,8 @@ export default function App() {
           {(authMode === 'login' || authMode === 'register' || authMode === 'reset') && <label>{authMode === 'reset' ? 'Nova senha' : 'Senha'}<input type="password" value={authPassword} onChange={e => setAuthPassword(e.target.value)} autoComplete={authMode === 'login' ? 'current-password' : 'new-password'} /></label>}
           {(authMode === 'register' || authMode === 'reset') && <label>Confirmar senha<input type="password" value={authConfirm} onChange={e => setAuthConfirm(e.target.value)} autoComplete="new-password" /></label>}
           {(authMode === 'verify' || authMode === 'reset') && <label>Código de 6 dígitos<input inputMode="numeric" maxLength={6} value={authCode} onChange={e => setAuthCode(e.target.value.replace(/\D/g, '').slice(0, 6))} /></label>}
-          {authMessage && <div className="auth-message">{authMessage}</div>}
-          <button className="primary wide" disabled={authBusy || !token} onClick={() => void submitAuth()}>{authBusy ? 'Processando…' : authMode === 'login' ? 'Entrar no Oryven' : authMode === 'register' ? 'Criar conta' : authMode === 'verify' ? 'Verificar e entrar' : authMode === 'forgot' ? 'Enviar código' : 'Alterar senha'}</button>
+          {!token && <div className="auth-message">Conectando ao backend local do Oryven…</div>}{authMessage && <div className="auth-message">{authMessage}</div>}
+          <button className="primary wide" disabled={authBusy} onClick={() => void submitAuth()}>{authBusy ? 'Processando…' : authMode === 'login' ? 'Entrar no Oryven' : authMode === 'register' ? 'Criar conta' : authMode === 'verify' ? 'Verificar e entrar' : authMode === 'forgot' ? 'Enviar código' : 'Alterar senha'}</button>
           {authMode === 'login' && <><button className="text-button" onClick={() => setAuthMode('forgot')}>Esqueceu sua senha?</button><button className="text-button" onClick={() => setAuthMode('register')}>Criar uma conta</button></>}
           {authMode === 'register' && <button className="text-button" onClick={() => setAuthMode('login')}>Já tenho uma conta</button>}
           {authMode === 'verify' && <button className="text-button" onClick={() => void authRequest('/api/auth/resend-verification', { email: authEmail }).then(r => setAuthMessage(r.message)).catch(e => setAuthMessage(String(e)))}>Reenviar código</button>}
