@@ -149,7 +149,13 @@ def create_app(core: OryvenCore | None = None, account_store: AccountStore | Non
     app.state.active_user_id = None
     app.state.auth_required = core is None
     app.state.account_store = account_store or AccountStore(settings.data_dir / "accounts.sqlite3")
-    app.state.mailer = mailer or SendGridMailer(\n        settings.sendgrid_api_key,\n        settings.sendgrid_from_email,\n        settings.sendgrid_from_name,\n        settings.email_hook_url,\n        settings.email_hook_secret,\n    )
+    app.state.mailer = mailer or SendGridMailer(
+        settings.sendgrid_api_key,
+        settings.sendgrid_from_email,
+        settings.sendgrid_from_name,
+        settings.email_hook_url,
+        settings.email_hook_secret,
+    )
     app.state.vault = vault or DeviceSessionVault(settings.data_dir / "device_session.bin")
     app.state.pilot_service = PilotServiceClient(RemoteServicesConfig(settings.pilot_service_url, settings.pilot_service_token))
     app.state.access_tokens = {}
