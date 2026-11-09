@@ -59,24 +59,34 @@ pub fn run() {
                 *slot = Some(child);
             }
 
-            let open = MenuItem::with_id(app, "open", "Abrir Oryven", true, None::<&str>)?;
-            let quit = MenuItem::with_id(app, "quit", "Sair", true, None::<&str>)?;
-            let menu = Menu::with_items(app, &[&open, &quit])?;
-            let tray_handle = handle.clone();
-            TrayIconBuilder::new()
-                .menu(&menu)
-                .tooltip("Oryven by Buno AI")
-                .on_menu_event(move |app, event| match event.id.as_ref() {
-                    "open" => show_main(app),
-                    "quit" => app.exit(0),
-                    _ => {}
-                })
-                .on_tray_icon_event(move |_tray, event| {
-                    if let TrayIconEvent::Click { button: MouseButton::Left, button_state: MouseButtonState::Up, .. } = event {
-                        show_main(&tray_handle);
-                    }
-                })
-                .build(app)?;
+            // Tray integration is optional at runtime. A tray/menu initialization
+            // failure must never prevent the main Oryven window from starting.
+            if let (Ok(open), Ok(quit)) = (
+                MenuItem::with_id(app, "open", "Abrir Oryven", true, None::<&str>),
+                MenuItem::with_id(app, "quit", "Sair", true, None::<&str>),
+            ) {
+                if let Ok(menu) = Menu::with_items(app, &[&open, &quit]) {
+                    let tray_handle = handle.clone();
+                    let _ = TrayIconBuilder::new()
+                        .menu(&menu)
+                        .tooltip("Oryven by Buno AI")
+                        .on_menu_event(move |app, event| match event.id.as_ref() {
+                            "open" => show_main(app),
+                            "quit" => app.exit(0),
+                            _ => {}
+                        })
+                        .on_tray_icon_event(move |_tray, event| {
+                            if let TrayIconEvent::Click { button: MouseButton::Left, button_state: MouseButtonState::Up, .. } = event {
+                                show_main(&tray_handle);
+                            }
+                        })
+                        .build(app);
+                }
+            }
+
+            // Make the main window visible/focused even if tray initialization
+            // is unavailable on a particular Windows machine.
+            show_main(&handle);
             Ok(())
         })
         .on_window_event(|window, event| {
