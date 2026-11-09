@@ -179,7 +179,7 @@ class AccountStore:
     def create_code(self, user_id: str, purpose: str, ttl_seconds: int = 600, min_interval_seconds: int = 60) -> str:
         if purpose not in {"verify_email", "reset_password"}:
             raise AccountError("Finalidade de código inválida.")
-        alphabet = string.ascii_uppercase + string.digits\n        code = "".join(secrets.choice(alphabet) for _ in range(8))
+        alphabet = string.ascii_uppercase + string.digits\n        code = "".join(secrets.choice(alphabet) for _ in range(6))
         salt = secrets.token_bytes(16)
         now = self._now()
         with self._lock, self._connect() as db:
@@ -200,7 +200,7 @@ class AccountStore:
         return code
 
     def consume_code(self, email: str, code: str, purpose: str, max_attempts: int = 6) -> UserAccount:
-        code = (code or "").strip().upper()\n        if len(code) != 8 or not code.isalnum():
+        code = (code or "").strip().upper()\n        if len(code) != 6 or not code.isalnum():
             raise AccountError("Código inválido ou expirado.")
         email_n = self._normalize_email(email)
         now = self._now()
