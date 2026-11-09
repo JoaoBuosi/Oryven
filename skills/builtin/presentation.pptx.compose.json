@@ -1,0 +1,43 @@
+{
+  "id": "presentation.pptx.compose",
+  "version": "1.0.0",
+  "name": "PowerPoint PPTX Composer",
+  "description": "Cria apresentação PPTX estruturada.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "pptx",
+    "title": "str",
+    "sections": "list"
+  },
+  "outputs": {
+    "file": "pptx"
+  },
+  "tools": [
+    "presentation",
+    "office"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "presentation",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

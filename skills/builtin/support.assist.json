@@ -1,0 +1,17 @@
+{
+  "id": "support.assist",
+  "version": "0.9.0",
+  "name": "Suporte",
+  "description": "Planejar triagem e suporte para conectores futuros.",
+  "permissions": [],
+  "inputs": {
+    "objective": "objetivo profissional"
+  },
+  "success_criteria": [
+    "Plano produzido sem efeito colateral"
+  ],
+  "family": "support",
+  "executable": false,
+  "risk": "low",
+  "stage": "planned"
+}

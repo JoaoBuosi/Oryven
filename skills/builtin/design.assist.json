@@ -1,0 +1,28 @@
+{
+  "id": "design.assist",
+  "version": "0.11.0",
+  "name": "Design",
+  "description": "Inventariar assets criativos/3D/mídia de uma pasta autorizada.",
+  "permissions": [
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "pasta relativa de assets"
+  },
+  "success_criteria": [
+    "inventário produzido sem alterar assets"
+  ],
+  "family": "design",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp",
+  "outputs": {
+    "inventory": "inventário de assets"
+  },
+  "tools": [
+    "design",
+    "filesystem",
+    "media_tools"
+  ]
+}

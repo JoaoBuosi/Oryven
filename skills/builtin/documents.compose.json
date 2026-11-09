@@ -1,0 +1,28 @@
+{
+  "id": "documents.compose",
+  "version": "0.11.0",
+  "name": "Documentos",
+  "description": "Criar documento Markdown/TXT local com conteúdo aprovado.",
+  "permissions": [
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "arquivo .md ou .txt",
+    "content": "conteúdo final"
+  },
+  "success_criteria": [
+    "arquivo gravado no workspace autorizado"
+  ],
+  "family": "documents",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp",
+  "outputs": {
+    "file": "documento criado"
+  },
+  "tools": [
+    "documents",
+    "filesystem"
+  ]
+}

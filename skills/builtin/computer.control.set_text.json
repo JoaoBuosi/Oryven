@@ -1,0 +1,14 @@
+{
+  "id": "computer.control.set_text",
+  "version": "0.10.0",
+  "name": "Preencher campo UIA",
+  "description": "Substitui texto em um campo Edit não-senha, identificado por janela, path e AutomationId, após autorização específica.",
+  "permissions": ["computer.ui.write"],
+  "inputs": {"handle": "HWND autorizado", "path": "caminho UIA", "text": "texto exato", "replace": "true"},
+  "success_criteria": ["Campos de senha são bloqueados", "Texto da autorização não é exibido em logs"],
+  "family": "ui_automation",
+  "executable": true,
+  "risk": "medium",
+  "tools": ["windows", "app"],
+  "stage": "mvp"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "git.push",
+  "version": "0.9.0",
+  "name": "Git push",
+  "description": "Executa git push em workspace explicitamente autorizado.",
+  "permissions": [
+    "git.push"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado"
+  },
+  "success_criteria": [
+    "Operação termina sem erro"
+  ],
+  "family": "git",
+  "executable": true,
+  "risk": "high",
+  "tools": [],
+  "stage": "mvp"
+}

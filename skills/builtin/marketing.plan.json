@@ -1,0 +1,44 @@
+{
+  "id": "marketing.plan",
+  "version": "1.0.0",
+  "name": "Marketing Plan Builder",
+  "description": "Gera plano de campanha estruturado para revisão.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "md",
+    "objective": "str",
+    "audience": "str",
+    "channels": "list"
+  },
+  "outputs": {
+    "file": "md"
+  },
+  "tools": [
+    "marketing",
+    "documents"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "marketing",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

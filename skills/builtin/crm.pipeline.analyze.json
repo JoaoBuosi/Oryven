@@ -1,0 +1,42 @@
+{
+  "id": "crm.pipeline.analyze",
+  "version": "1.0.0",
+  "name": "CRM Pipeline Analyzer",
+  "description": "Analisa pipeline CSV e distribuição por status.",
+  "permissions": [
+    "workspace.read"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "csv",
+    "status_column": "str",
+    "amount_column": "optional"
+  },
+  "outputs": {
+    "analysis": "json"
+  },
+  "tools": [
+    "crm",
+    "analytics"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "crm",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp"
+}

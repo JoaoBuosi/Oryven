@@ -1,0 +1,30 @@
+{
+  "id": "presentation.compose",
+  "version": "0.11.0",
+  "name": "Apresentações",
+  "description": "Criar outline estruturado de apresentação em Markdown para futura renderização em Office/Slides.",
+  "permissions": [
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "arquivo .md",
+    "title": "título",
+    "sections": "lista de slides/seções"
+  },
+  "success_criteria": [
+    "outline gravado no workspace autorizado"
+  ],
+  "family": "presentation",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp",
+  "outputs": {
+    "outline": "outline Markdown"
+  },
+  "tools": [
+    "presentation",
+    "documents",
+    "filesystem"
+  ]
+}

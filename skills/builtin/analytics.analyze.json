@@ -1,0 +1,28 @@
+{
+  "id": "analytics.analyze",
+  "version": "0.11.0",
+  "name": "Analytics",
+  "description": "Executar análise descritiva local de CSV com estatísticas e frequências.",
+  "permissions": [
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "arquivo CSV"
+  },
+  "success_criteria": [
+    "métricas calculadas sem alterar fonte"
+  ],
+  "family": "analytics",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp",
+  "outputs": {
+    "analysis": "métricas estruturadas"
+  },
+  "tools": [
+    "analytics",
+    "spreadsheet",
+    "filesystem"
+  ]
+}

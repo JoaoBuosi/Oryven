@@ -1,0 +1,19 @@
+{
+  "id": "buno.chat",
+  "version": "0.4.0",
+  "name": "Perguntar à inteligência Buno",
+  "description": "Envia texto explicitamente aprovado à Buno local com token válido",
+  "permissions": [
+    "buno.chat.send"
+  ],
+  "inputs": {
+    "message": "texto até 500 caracteres"
+  },
+  "success_criteria": [
+    "Resposta textual SSE confirmada; sem execução de ferramentas"
+  ],
+  "stage": "mvp",
+  "family": "model_runtime",
+  "executable": true,
+  "risk": "medium"
+}

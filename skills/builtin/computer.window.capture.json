@@ -1,0 +1,18 @@
+{
+  "id": "computer.window.capture",
+  "version": "1.0.0",
+  "name": "Window Visual Snapshot",
+  "description": "Captura em memória a janela Windows exata aprovada para percepção visual; não persiste automaticamente a imagem.",
+  "permissions": ["screen.capture.window", "user.approval"],
+  "inputs": {"handle": "integer"},
+  "outputs": {"image_base64": "png/base64", "sha256": "string", "width": "integer", "height": "integer"},
+  "tools": ["ui_automation", "windows", "vision"],
+  "tests": ["window_identity_revalidated", "snapshot_not_persisted"],
+  "logs": ["metadata_only"],
+  "errors": ["window_changed", "capture_unavailable"],
+  "success_criteria": ["snapshot bound to approved HWND/PID", "image returned only after approval"],
+  "family": "ui_automation",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

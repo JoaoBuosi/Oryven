@@ -1,0 +1,17 @@
+{
+  "id": "erp.assist",
+  "version": "0.9.0",
+  "name": "ERP",
+  "description": "Planejar operações empresariais para integrações ERP futuras.",
+  "permissions": [],
+  "inputs": {
+    "objective": "objetivo profissional"
+  },
+  "success_criteria": [
+    "Plano produzido sem efeito colateral"
+  ],
+  "family": "erp",
+  "executable": false,
+  "risk": "low",
+  "stage": "planned"
+}

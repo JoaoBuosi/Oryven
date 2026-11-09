@@ -1,0 +1,17 @@
+{
+  "id": "crm.assist",
+  "version": "0.9.0",
+  "name": "CRM",
+  "description": "Planejar tarefas comerciais para conectores de CRM futuros.",
+  "permissions": [],
+  "inputs": {
+    "objective": "objetivo profissional"
+  },
+  "success_criteria": [
+    "Plano produzido sem efeito colateral"
+  ],
+  "family": "crm",
+  "executable": false,
+  "risk": "low",
+  "stage": "planned"
+}

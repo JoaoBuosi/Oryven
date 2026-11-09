@@ -1,0 +1,19 @@
+{
+  "id": "app.launch",
+  "version": "0.2.0",
+  "name": "Abrir aplicativo permitido",
+  "description": "Inicia Notepad, Calculadora ou Explorador a partir do System32 depois de aprovação.",
+  "permissions": [
+    "windows.launch_allowlisted_app"
+  ],
+  "inputs": {
+    "app_id": "notepad | calculator | explorer"
+  },
+  "success_criteria": [
+    "Processo solicitado sem erro; janela não verificada"
+  ],
+  "stage": "mvp",
+  "family": "ui_automation",
+  "executable": true,
+  "risk": "medium"
+}

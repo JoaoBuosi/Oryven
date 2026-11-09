@@ -1,0 +1,17 @@
+{
+  "id": "model.runtime",
+  "version": "0.9.0",
+  "name": "Model Runtime",
+  "description": "Usar inteligência/modelos dentro da governança do Oryven.",
+  "permissions": [],
+  "inputs": {
+    "objective": "objetivo profissional"
+  },
+  "success_criteria": [
+    "Plano produzido sem efeito colateral"
+  ],
+  "family": "model_runtime",
+  "executable": false,
+  "risk": "low",
+  "stage": "planned"
+}

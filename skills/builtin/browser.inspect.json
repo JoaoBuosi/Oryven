@@ -1,0 +1,19 @@
+{
+  "id": "browser.inspect",
+  "version": "0.4.0",
+  "name": "Inspecionar página pública",
+  "description": "Navega em Chromium isolado em domínios HTTPS permitidos após aprovação",
+  "permissions": [
+    "browser.public.inspect"
+  ],
+  "inputs": {
+    "url": "HTTPS público permitido"
+  },
+  "success_criteria": [
+    "Título, cabeçalhos e código HTTP retornados sem login"
+  ],
+  "stage": "mvp",
+  "family": "browser",
+  "executable": true,
+  "risk": "low"
+}

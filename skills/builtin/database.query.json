@@ -1,0 +1,29 @@
+{
+  "id": "database.query",
+  "version": "0.11.0",
+  "name": "Banco de dados",
+  "description": "Executar consulta local somente leitura em banco SQLite dentro do workspace.",
+  "permissions": [
+    "database.read",
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "arquivo SQLite",
+    "query": "SELECT/WITH/PRAGMA somente leitura"
+  },
+  "success_criteria": [
+    "consulta executada em mode=ro e query_only"
+  ],
+  "family": "database",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp",
+  "outputs": {
+    "rows": "até 200 linhas"
+  },
+  "tools": [
+    "database",
+    "analytics"
+  ]
+}

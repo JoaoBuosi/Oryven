@@ -1,0 +1,21 @@
+{
+  "id": "filesystem.read",
+  "version": "0.9.0",
+  "name": "Ler arquivo de texto",
+  "description": "Lê arquivo UTF-8 de até 1 MB dentro de workspace autorizado.",
+  "permissions": [
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado",
+    "path": "arquivo relativo"
+  },
+  "success_criteria": [
+    "Conteúdo retornado somente após aprovação específica"
+  ],
+  "family": "filesystem",
+  "executable": true,
+  "risk": "low",
+  "tools": [],
+  "stage": "mvp"
+}

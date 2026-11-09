@@ -1,0 +1,42 @@
+{
+  "id": "spreadsheet.xlsx.create",
+  "version": "1.0.0",
+  "name": "Excel XLSX Creator",
+  "description": "Cria workbook XLSX estruturado com múltiplas abas.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "xlsx",
+    "sheets": "list"
+  },
+  "outputs": {
+    "file": "xlsx"
+  },
+  "tools": [
+    "spreadsheet",
+    "office"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "spreadsheet",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "build.maven",
+  "version": "0.9.0",
+  "name": "Build Maven",
+  "description": "Executa build maven em workspace explicitamente autorizado.",
+  "permissions": [
+    "build.maven"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado"
+  },
+  "success_criteria": [
+    "Operação termina sem erro"
+  ],
+  "family": "developer_runtime",
+  "executable": true,
+  "risk": "medium",
+  "tools": [],
+  "stage": "mvp"
+}

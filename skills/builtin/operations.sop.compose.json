@@ -1,0 +1,43 @@
+{
+  "id": "operations.sop.compose",
+  "version": "1.0.0",
+  "name": "Operations SOP Composer",
+  "description": "Cria procedimento operacional padrão em Markdown.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "md",
+    "title": "str",
+    "sections": "list"
+  },
+  "outputs": {
+    "file": "md"
+  },
+  "tools": [
+    "operations",
+    "documents"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "operations",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

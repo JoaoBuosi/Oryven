@@ -1,0 +1,17 @@
+{
+  "id": "computer.windows.list",
+  "version": "0.4.0",
+  "name": "Listar janelas visíveis",
+  "description": "Obtém até 25 títulos de janelas após aprovação específica",
+  "permissions": [
+    "windows.ui.inspect"
+  ],
+  "inputs": {},
+  "success_criteria": [
+    "Metadados enviados somente à interface; nenhuma gravação de conteúdos"
+  ],
+  "stage": "mvp",
+  "family": "ui_automation",
+  "executable": true,
+  "risk": "low"
+}

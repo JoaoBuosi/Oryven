@@ -1,0 +1,40 @@
+{
+  "id": "ecommerce.catalog.audit",
+  "version": "1.0.0",
+  "name": "E-commerce Catalog Auditor",
+  "description": "Audita CSV de catálogo sem modificar a origem.",
+  "permissions": [
+    "workspace.read"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "csv"
+  },
+  "outputs": {
+    "audit": "json"
+  },
+  "tools": [
+    "commerce",
+    "spreadsheet"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "commerce",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp"
+}

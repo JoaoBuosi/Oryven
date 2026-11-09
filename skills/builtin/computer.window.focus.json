@@ -1,0 +1,40 @@
+{
+  "id": "computer.window.focus",
+  "version": "0.5.0",
+  "name": "Selecionar janela por UIA",
+  "description": "Seleciona janela visível com identidade fixa e verifica foco.",
+  "permissions": [
+    "computer.window.focus"
+  ],
+  "tools": [
+    "windows.uia"
+  ],
+  "inputs": {
+    "handle": "int positivo; originado da inspeção UIA autorizada"
+  },
+  "outputs": {
+    "outcome": "verified|unverified|failed",
+    "verified": "bool",
+    "message": "str"
+  },
+  "success_criteria": [
+    "Janela ativa verificada após seleção"
+  ],
+  "tests": [
+    "backend/tests/test_window_actions.py"
+  ],
+  "logs": [
+    "tipo de ação",
+    "status",
+    "id da aprovação (sem texto de controle)"
+  ],
+  "errors": [
+    "janela ausente/alterada",
+    "controle não permitido",
+    "resultado não verificável"
+  ],
+  "stage": "mvp-limited",
+  "family": "ui_automation",
+  "executable": false,
+  "risk": "medium"
+}

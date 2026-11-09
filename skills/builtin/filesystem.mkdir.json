@@ -1,0 +1,21 @@
+{
+  "id": "filesystem.mkdir",
+  "version": "0.9.0",
+  "name": "Criar pasta",
+  "description": "Cria diretório dentro de workspace autorizado.",
+  "permissions": [
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado",
+    "path": "pasta relativa"
+  },
+  "success_criteria": [
+    "Diretório permanece dentro do workspace"
+  ],
+  "family": "filesystem",
+  "executable": true,
+  "risk": "medium",
+  "tools": [],
+  "stage": "mvp"
+}

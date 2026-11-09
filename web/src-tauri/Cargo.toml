@@ -1,0 +1,17 @@
+[package]
+name = "oryven"
+version = "0.19.1"
+description = "Oryven by Buno AI"
+authors = ["Buno AI"]
+edition = "2021"
+
+[lib]
+name = "oryven_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-updater = "2"

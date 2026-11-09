@@ -1,0 +1,25 @@
+{
+  "id": "terminal.run",
+  "version": "0.9.0",
+  "name": "Terminal supervisionado",
+  "description": "Executa argv exato sem shell, em workspace autorizado e com executável allowlisted.",
+  "permissions": [
+    "terminal.execute"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado",
+    "executable": "nome allowlisted",
+    "args": "lista de argumentos"
+  },
+  "success_criteria": [
+    "shell=False",
+    "comando e argumentos vinculados à aprovação"
+  ],
+  "family": "terminal",
+  "executable": true,
+  "risk": "high",
+  "tools": [
+    "developer_runtime"
+  ],
+  "stage": "mvp"
+}

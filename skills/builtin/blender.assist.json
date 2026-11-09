@@ -1,0 +1,42 @@
+{
+  "id": "blender.assist",
+  "version": "1.0.0",
+  "name": "Blender Script Preparer",
+  "description": "Prepara script Python revisável para Blender.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "output": "py",
+    "script": "str"
+  },
+  "outputs": {
+    "file": "py"
+  },
+  "tools": [
+    "blender",
+    "3d"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "design",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

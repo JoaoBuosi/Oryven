@@ -1,0 +1,18 @@
+{
+  "id": "office.report.from.xlsx",
+  "version": "1.0.0",
+  "name": "Excel to Word Report",
+  "description": "Analyze an XLSX workbook and generate a DOCX report from the measured workbook summary.",
+  "permissions": ["filesystem.read", "filesystem.write"],
+  "inputs": {"workspace": "path", "path": "xlsx", "output": "docx", "title": "string"},
+  "outputs": {"report": "docx", "analysis": "structured"},
+  "tools": ["office", "spreadsheet", "documents"],
+  "tests": ["xlsx-analysis", "docx-output"],
+  "logs": ["action", "target"],
+  "errors": ["invalid-xlsx", "missing-office-dependencies"],
+  "success_criteria": ["source workbook analyzed", "DOCX report created from analysis"],
+  "family": "office",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

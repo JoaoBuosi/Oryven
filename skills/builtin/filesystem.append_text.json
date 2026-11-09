@@ -1,0 +1,22 @@
+{
+  "id": "filesystem.append_text",
+  "version": "0.9.0",
+  "name": "Acrescentar texto a arquivo",
+  "description": "Acrescenta texto a arquivo dentro de workspace autorizado.",
+  "permissions": [
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado",
+    "path": "arquivo relativo",
+    "content": "texto até 20 mil caracteres"
+  },
+  "success_criteria": [
+    "Arquivo permanece dentro do workspace"
+  ],
+  "family": "filesystem",
+  "executable": true,
+  "risk": "medium",
+  "tools": [],
+  "stage": "mvp"
+}

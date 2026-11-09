@@ -1,0 +1,28 @@
+{
+  "id": "knowledge.organize",
+  "version": "0.11.0",
+  "name": "Conhecimento",
+  "description": "Indexar metadados de arquivos textuais/código em pasta autorizada para organização de conhecimento.",
+  "permissions": [
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "pasta relativa"
+  },
+  "success_criteria": [
+    "índice gerado sem copiar conteúdo sensível"
+  ],
+  "family": "knowledge",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp",
+  "outputs": {
+    "index": "índice de arquivos"
+  },
+  "tools": [
+    "knowledge",
+    "filesystem",
+    "documents"
+  ]
+}

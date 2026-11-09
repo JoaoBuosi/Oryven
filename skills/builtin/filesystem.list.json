@@ -1,0 +1,21 @@
+{
+  "id": "filesystem.list",
+  "version": "0.9.0",
+  "name": "Listar arquivos do workspace",
+  "description": "Lista até 200 itens dentro de uma pasta autorizada.",
+  "permissions": [
+    "filesystem.read.metadata"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado",
+    "path": "caminho relativo"
+  },
+  "success_criteria": [
+    "Nenhum item fora do workspace é retornado"
+  ],
+  "family": "filesystem",
+  "executable": true,
+  "risk": "low",
+  "tools": [],
+  "stage": "mvp"
+}

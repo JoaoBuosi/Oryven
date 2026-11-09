@@ -1,0 +1,40 @@
+{
+  "id": "finance.workbook.analyze",
+  "version": "1.0.0",
+  "name": "Finance Workbook Analyzer",
+  "description": "Analisa XLSX financeiro sem movimentar fundos.",
+  "permissions": [
+    "workspace.read"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "xlsx"
+  },
+  "outputs": {
+    "analysis": "json"
+  },
+  "tools": [
+    "finance",
+    "spreadsheet"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "finance",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "office.open.document",
+  "version": "1.0.0",
+  "name": "Open Office Document",
+  "description": "Open an exact XLSX, DOCX, PPTX or PDF inside the authorized workspace using the Windows default application.",
+  "permissions": ["filesystem.read", "external_application.launch"],
+  "inputs": {"workspace": "path", "path": "office-document"},
+  "outputs": {"opened": "boolean"},
+  "tools": ["office", "windows", "app"],
+  "tests": ["workspace-boundary", "extension-allowlist"],
+  "logs": ["action", "target"],
+  "errors": ["missing-file", "no-windows-association"],
+  "success_criteria": ["exact authorized document launch requested"],
+  "family": "office",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

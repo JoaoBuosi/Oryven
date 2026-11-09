@@ -1,0 +1,40 @@
+{
+  "id": "hr.organize",
+  "version": "1.0.0",
+  "name": "HR Records Organizer",
+  "description": "Organiza e resume CSV de RH sem pontuar candidatos ou tomar decisões.",
+  "permissions": [
+    "workspace.read"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "csv"
+  },
+  "outputs": {
+    "summary": "json"
+  },
+  "tools": [
+    "hr",
+    "spreadsheet"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "hr",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "support.triage",
+  "version": "1.0.0",
+  "name": "Support Triage",
+  "description": "Agrupa tickets CSV por categoria/prioridade sem responder automaticamente.",
+  "permissions": [
+    "workspace.read"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "csv"
+  },
+  "outputs": {
+    "summary": "json"
+  },
+  "tools": [
+    "support",
+    "analytics"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "support",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp"
+}

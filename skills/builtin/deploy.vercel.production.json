@@ -1,0 +1,20 @@
+{
+  "id": "deploy.vercel.production",
+  "version": "0.9.0",
+  "name": "Deploy Vercel produção",
+  "description": "Executa deploy vercel produção em workspace explicitamente autorizado.",
+  "permissions": [
+    "deploy.vercel.production"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado"
+  },
+  "success_criteria": [
+    "Operação termina sem erro"
+  ],
+  "family": "deploy",
+  "executable": true,
+  "risk": "critical",
+  "tools": [],
+  "stage": "mvp"
+}

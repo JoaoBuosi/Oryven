@@ -1,0 +1,41 @@
+{
+  "id": "computer.button.invoke",
+  "version": "0.5.0",
+  "name": "Invocar botão com segurança",
+  "description": "Invoca somente Maximizar, Restaurar e Minimizar em UIA, com verificação WindowPattern.",
+  "permissions": [
+    "computer.button.invoke"
+  ],
+  "tools": [
+    "windows.uia"
+  ],
+  "inputs": {
+    "handle": "int positivo; originado da inspeção UIA autorizada",
+    "path": "array de 1 a 2 índices, 0–24"
+  },
+  "outputs": {
+    "outcome": "verified|unverified|failed",
+    "verified": "bool",
+    "message": "str"
+  },
+  "success_criteria": [
+    "Estado da janela confirma a ação solicitada"
+  ],
+  "tests": [
+    "backend/tests/test_window_actions.py"
+  ],
+  "logs": [
+    "tipo de ação",
+    "status",
+    "id da aprovação (sem texto de controle)"
+  ],
+  "errors": [
+    "janela ausente/alterada",
+    "controle não permitido",
+    "resultado não verificável"
+  ],
+  "stage": "mvp-limited",
+  "family": "ui_automation",
+  "executable": false,
+  "risk": "medium"
+}

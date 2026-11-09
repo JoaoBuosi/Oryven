@@ -1,0 +1,14 @@
+{
+  "id": "computer.control.invoke",
+  "version": "0.10.0",
+  "name": "Invocar controle UIA",
+  "description": "Invoca uma vez um controle UI Automation previamente inspecionado, não sensível e de tipo permitido.",
+  "permissions": ["computer.ui.invoke"],
+  "inputs": {"handle": "HWND autorizado", "path": "caminho UIA retornado pela inspeção"},
+  "success_criteria": ["Janela e controle são revalidados", "Nenhuma repetição automática em efeito incerto"],
+  "family": "ui_automation",
+  "executable": true,
+  "risk": "medium",
+  "tools": ["windows", "app"],
+  "stage": "mvp"
+}

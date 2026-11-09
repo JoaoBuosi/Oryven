@@ -1,0 +1,14 @@
+{
+  "id": "app.launch.universal",
+  "version": "0.10.0",
+  "name": "Abrir aplicativo descoberto",
+  "description": "Resolve um aplicativo do inventário local do Windows e solicita autorização one-shot para abrir o alvo descoberto.",
+  "permissions": ["computer.app.launch"],
+  "inputs": {"app_name": "nome único do aplicativo descoberto"},
+  "success_criteria": ["Alvo pertence ao inventário local", "Abertura ocorre somente após autorização"],
+  "family": "windows",
+  "executable": true,
+  "risk": "medium",
+  "tools": ["ui_automation", "app"],
+  "stage": "mvp"
+}

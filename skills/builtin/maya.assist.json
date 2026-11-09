@@ -1,0 +1,30 @@
+{
+  "id": "maya.assist",
+  "version": "0.11.0",
+  "name": "Maya / 3D",
+  "description": "Preparar script Maya Python ou MEL em arquivo para revisão humana antes de execução no Maya.",
+  "permissions": [
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "output": "arquivo .py ou .mel",
+    "language": "python ou mel",
+    "script": "script a preparar"
+  },
+  "success_criteria": [
+    "script gravado com aviso de revisão manual"
+  ],
+  "family": "maya",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp",
+  "outputs": {
+    "script_file": "script preparado"
+  },
+  "tools": [
+    "maya",
+    "python",
+    "filesystem"
+  ]
+}

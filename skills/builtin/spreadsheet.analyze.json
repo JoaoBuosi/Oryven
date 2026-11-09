@@ -1,0 +1,28 @@
+{
+  "id": "spreadsheet.analyze",
+  "version": "0.11.0",
+  "name": "Planilhas",
+  "description": "Analisar CSV local e calcular perfil de colunas, ausências, cardinalidade e estatísticas numéricas.",
+  "permissions": [
+    "filesystem.read"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "arquivo CSV"
+  },
+  "success_criteria": [
+    "CSV analisado sem alteração"
+  ],
+  "family": "spreadsheet",
+  "executable": true,
+  "risk": "low",
+  "stage": "mvp",
+  "outputs": {
+    "profile": "perfil estruturado"
+  },
+  "tools": [
+    "spreadsheet",
+    "analytics",
+    "filesystem"
+  ]
+}

@@ -1,0 +1,40 @@
+text,label
+abra o bloco de notas,app.launch
+abre a calculadora,app.launch
+inicie o explorador de arquivos,app.launch
+pesquise inteligencia artificial,browser.search
+procure noticias de tecnologia,browser.search
+pesquisar sobre spring boot,browser.search
+mostre o status do git,git.status
+qual o git status deste projeto,git.status
+verifique arquivos modificados no git,git.status
+mostre o diff do git,git.diff
+quero ver as mudancas no codigo,git.diff
+compare as alteracoes deste repositorio,git.diff
+rode os testes python,test.python
+execute pytest neste projeto,test.python
+rode a suite python,test.python
+rode os testes npm,test.npm
+execute npm test,test.npm
+rode os testes do frontend,test.npm
+rode os testes maven,test.maven
+execute mvn test,test.maven
+teste o backend java,test.maven
+faça o build npm,build.npm
+compile o frontend,build.npm
+rode npm run build,build.npm
+faça o build maven,build.maven
+compile o projeto java,build.maven
+rode mvn package,build.maven
+inspecione este workspace,workspace.inspect
+analise a estrutura deste projeto,workspace.inspect
+mostre os arquivos principais do projeto,workspace.inspect
+faça git push,git.push
+envie meus commits para o remoto,git.push
+suba esta branch para o github,git.push
+faça deploy de preview na vercel,deploy.vercel.preview
+publique um preview na vercel,deploy.vercel.preview
+crie um deploy de teste na vercel,deploy.vercel.preview
+faça deploy em producao na vercel,deploy.vercel.production
+publique em producao na vercel,deploy.vercel.production
+suba a versao para producao na vercel,deploy.vercel.production

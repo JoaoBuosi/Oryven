@@ -1,0 +1,42 @@
+{
+  "id": "blender.execute",
+  "version": "1.0.0",
+  "name": "Blender Script Executor",
+  "description": "Executa script Python via Blender configurado explicitamente.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "py",
+    "executable": "optional"
+  },
+  "outputs": {
+    "process": "result"
+  },
+  "tools": [
+    "blender",
+    "3d"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "design",
+  "executable": true,
+  "risk": "high",
+  "stage": "mvp"
+}

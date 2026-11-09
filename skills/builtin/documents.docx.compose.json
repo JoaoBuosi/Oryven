@@ -1,0 +1,43 @@
+{
+  "id": "documents.docx.compose",
+  "version": "1.0.0",
+  "name": "Word DOCX Composer",
+  "description": "Cria documento DOCX estruturado localmente.",
+  "permissions": [
+    "workspace.read",
+    "workspace.write"
+  ],
+  "inputs": {
+    "workspace": "path",
+    "path": "docx",
+    "title": "str",
+    "sections": "list"
+  },
+  "outputs": {
+    "file": "docx"
+  },
+  "tools": [
+    "documents",
+    "office"
+  ],
+  "tests": [
+    "unit",
+    "approval"
+  ],
+  "logs": [
+    "action",
+    "result_metadata"
+  ],
+  "errors": [
+    "validation",
+    "io"
+  ],
+  "success_criteria": [
+    "resultado estruturado",
+    "execução somente após aprovação"
+  ],
+  "family": "documents",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp"
+}

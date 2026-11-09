@@ -1,0 +1,31 @@
+{
+  "id": "datasets.prepare",
+  "version": "0.11.0",
+  "name": "Datasets",
+  "description": "Preparar CSV local removendo espaços periféricos e linhas duplicadas, gerando novo arquivo.",
+  "permissions": [
+    "filesystem.read",
+    "filesystem.write"
+  ],
+  "inputs": {
+    "workspace": "pasta absoluta autorizada",
+    "path": "CSV de origem",
+    "output": "CSV de saída"
+  },
+  "success_criteria": [
+    "novo CSV gravado e origem preservada"
+  ],
+  "family": "datasets",
+  "executable": true,
+  "risk": "medium",
+  "stage": "mvp",
+  "outputs": {
+    "dataset": "CSV preparado",
+    "report": "contagens"
+  },
+  "tools": [
+    "datasets",
+    "analytics",
+    "filesystem"
+  ]
+}

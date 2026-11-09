@@ -1,0 +1,20 @@
+{
+  "id": "deploy.vercel.preview",
+  "version": "0.9.0",
+  "name": "Deploy Vercel preview",
+  "description": "Executa deploy vercel preview em workspace explicitamente autorizado.",
+  "permissions": [
+    "deploy.vercel.preview"
+  ],
+  "inputs": {
+    "workspace": "caminho absoluto autorizado"
+  },
+  "success_criteria": [
+    "Operação termina sem erro"
+  ],
+  "family": "deploy",
+  "executable": true,
+  "risk": "high",
+  "tools": [],
+  "stage": "mvp"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "computer.window.inspect",
+  "version": "0.4.0",
+  "name": "Inspecionar árvore UIA",
+  "description": "Lê metadados superficiais de até 50 controles de uma janela visível após aprovação",
+  "permissions": [
+    "windows.ui.inspect"
+  ],
+  "inputs": {
+    "handle": "int positivo"
+  },
+  "success_criteria": [
+    "Campos editáveis e senhas omitidos"
+  ],
+  "stage": "mvp",
+  "family": "ui_automation",
+  "executable": false,
+  "risk": "low"
+}

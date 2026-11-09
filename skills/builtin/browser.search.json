@@ -1,0 +1,19 @@
+{
+  "id": "browser.search",
+  "version": "0.2.0",
+  "name": "Pesquisa no navegador",
+  "description": "Solicita ao navegador padrão uma pesquisa Google depois de aprovação específica.",
+  "permissions": [
+    "browser.open_search"
+  ],
+  "inputs": {
+    "query": "string (1-180 caracteres)"
+  },
+  "success_criteria": [
+    "Pedido de abertura aceito pelo navegador; carregamento não verificado"
+  ],
+  "stage": "mvp",
+  "family": "browser",
+  "executable": true,
+  "risk": "medium"
+}
