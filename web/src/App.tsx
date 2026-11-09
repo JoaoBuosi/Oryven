@@ -308,7 +308,7 @@ export default function App() {
   const latestMission = missions[0] || null;
   const completedMission = missions.find(m => m.status === 'completed') || null;
   const journey = [
-    { label: 'Conta', done: true, hint: account.email_verified ? 'Conta verificada' : 'Verifique seu e-mail', view: 'home' as View },
+    { label: 'Conta', done: true, hint: account?.email_verified ? 'Conta verificada' : 'Verifique seu e-mail', view: 'home' as View },
     { label: 'Configuração', done: !!onboarding?.completed, hint: onboarding?.completed ? 'Onboarding completo' : 'Finalize o onboarding', view: 'settings' as View },
     { label: 'Projeto', done: !!contextStatus?.active_project, hint: contextStatus?.active_project?.name || 'Selecione um projeto', view: 'projects' as View },
     { label: 'Tarefa', done: missions.length > 0, hint: missions.length ? 'Missão criada' : 'Digite ou fale um objetivo', view: 'home' as View },
