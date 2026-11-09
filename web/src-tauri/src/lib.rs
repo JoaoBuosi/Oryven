@@ -91,7 +91,6 @@ fn show_main(app: &tauri::AppHandle) {
 pub fn run() {
     bootstrap_log("desktop bootstrap: start");
     let app_result = tauri::Builder::default()
-        .plugin(tauri_plugin_updater::Builder::new().build())
         .manage(BackendProcess(Mutex::new(None)))
         .setup(|app| {
             let handle = app.handle().clone();
